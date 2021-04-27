@@ -1,0 +1,1142 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Log Visualization</title>
+
+		<style type="text/css">
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 360px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+		</style>
+	</head>
+	<body>
+<script src="http://code.highcharts.com.cn/highcharts/9.0.1/highcharts.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/9.0.1/modules/series-label.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/9.0.1/modules/exporting.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/9.0.1/modules/export-data.js"></script>
+<script src="http://code.highcharts.com.cn/highcharts/9.0.1/modules/accessibility.js"></script>
+
+<figure class="highcharts-figure">
+    <p class="highcharts-description">
+        <b>PLACEHOLDER_DESCRIPTION</b>
+    </p>
+	<p class="highcharts-description">
+        PLACEHOLDER_RUNNING_LOG
+    </p>
+	<div id="container_total_profit"></div>
+	<div id="container_daily_profit"></div>
+	<div id="container_total_income"></div>
+	<div id="container_daily_income"></div>
+	<div id="container_total_cost"></div>
+	<div id="container_daily_cost"></div>
+
+	<div id="container_mean_daily_income"></div>
+	<div id="container_daily_bid"></div>
+	<div id="container_total_daily_bid"></div>
+	<div id="container_vm_num"></div>
+	<div id="container_add_request"></div>
+	<div id="container_del_request"></div>
+    <div id="container_mean_discount_rate"></div>
+	<div id="container_bid_success_rate"></div>	
+	<div id="container_give_up_rate"></div>	
+	<div id="container_price_factor"></div>
+</figure>
+
+		<script type="text/javascript">
+Highcharts.chart('container_total_profit', {
+
+    title: {
+        text: 'Total Profit'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Total Profit'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+			
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_TOTAL_PROFIT_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_TOTAL_PROFIT_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+<script type="text/javascript">
+Highcharts.chart('container_daily_profit', {
+
+    title: {
+        text: 'Daily Profit'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Daily Profit'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_DAILY_PROFIT_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_DAILY_PROFIT_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+
+		<script type="text/javascript">
+Highcharts.chart('container_total_cost', {
+
+    title: {
+        text: 'Total Cost'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Total Cost'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_TOTAL_COST_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_TOTAL_COST_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+<script type="text/javascript">
+Highcharts.chart('container_daily_cost', {
+
+    title: {
+        text: 'Daily Cost'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Daily Cost'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_DAILY_COST_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_DAILY_COST_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+	<script type="text/javascript">
+Highcharts.chart('container_mean_daily_income', {
+
+    title: {
+        text: 'Daily Income (Mean)'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Income'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_MEAN_DAILY_INCOME_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_MEAN_DAILY_INCOME_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+<script type="text/javascript">
+	Highcharts.chart('container_daily_income', {
+
+		title: {
+			text: 'Daily Income'
+		},
+
+		subtitle: {
+			text: ''
+		},
+
+		yAxis: {
+			title: {
+				text: 'Income'
+			}
+		},
+
+		xAxis: {
+			accessibility: {
+				rangeDescription: 'Range: 1 to 2017'
+			}
+		},
+
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'middle'
+		},
+
+		plotOptions: {
+			series: {
+				label: {
+					connectorAllowed: false
+				},
+				pointStart: 1
+			}
+		},
+
+		chart: {
+			zoomType: 'x'
+		},
+
+		series: [{
+			name: 'Player 0',
+			data: PLACEHOLDER_DAILY_INCOME_0
+		}, {
+			name: 'Player 1',
+			data: PLACEHOLDER_DAILY_INCOME_1
+		}],
+
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						layout: 'horizontal',
+						align: 'center',
+						verticalAlign: 'bottom'
+					}
+				}
+			}]
+		}
+
+	});
+</script>
+
+<script type="text/javascript">
+	Highcharts.chart('container_total_income', {
+
+		title: {
+			text: 'Total Income'
+		},
+
+		subtitle: {
+			text: ''
+		},
+
+		yAxis: {
+			title: {
+				text: 'Total Income'
+			}
+		},
+
+		xAxis: {
+			accessibility: {
+				rangeDescription: 'Range: 1 to 2017'
+			}
+		},
+
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'middle'
+		},
+
+		plotOptions: {
+			series: {
+				label: {
+					connectorAllowed: false
+				},
+				pointStart: 1
+			}
+		},
+
+		chart: {
+			zoomType: 'x'
+		},
+
+		series: [{
+			name: 'Player 0',
+			data: PLACEHOLDER_TOTAL_INCOME_0
+		}, {
+			name: 'Player 1',
+			data: PLACEHOLDER_TOTAL_INCOME_1
+		}],
+
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						layout: 'horizontal',
+						align: 'center',
+						verticalAlign: 'bottom'
+					}
+				}
+			}]
+		}
+
+	});
+</script>
+
+	<script type="text/javascript">
+Highcharts.chart('container_daily_bid', {
+
+    title: {
+        text: 'Daily Bid (Mean)'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Bid'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_DAILY_BID_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_DAILY_BID_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+<script type="text/javascript">
+	Highcharts.chart('container_total_daily_bid', {
+
+		title: {
+			text: 'Daily Bid (Sum)'
+		},
+
+		subtitle: {
+			text: ''
+		},
+
+		yAxis: {
+			title: {
+				text: 'Income'
+			}
+		},
+
+		xAxis: {
+			accessibility: {
+				rangeDescription: 'Range: 1 to 2017'
+			}
+		},
+
+		legend: {
+			layout: 'vertical',
+			align: 'right',
+			verticalAlign: 'middle'
+		},
+
+		plotOptions: {
+			series: {
+				label: {
+					connectorAllowed: false
+				},
+				pointStart: 1
+			}
+		},
+
+		chart: {
+			zoomType: 'x'
+		},
+
+		series: [{
+			name: 'Player 0',
+			data: PLACEHOLDER_TOTAL_DAILY_BID_0
+		}, {
+			name: 'Player 1',
+			data: PLACEHOLDER_TOTAL_DAILY_BID_1
+		}],
+
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 500
+				},
+				chartOptions: {
+					legend: {
+						layout: 'horizontal',
+						align: 'center',
+						verticalAlign: 'bottom'
+					}
+				}
+			}]
+		}
+
+	});
+</script>
+
+		<script type="text/javascript">
+Highcharts.chart('container_vm_num', {
+
+    title: {
+        text: 'VM Num'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'VM Num'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+			
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_VM_NUM_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_VM_NUM_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+		<script type="text/javascript">
+Highcharts.chart('container_mean_discount_rate', {
+
+    title: {
+        text: 'Daily Mean Discount Rate'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Discount Rate'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+			
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_MEAN_DISCOUNT_RATE_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_MEAN_DISCOUNT_RATE_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+		
+			<script type="text/javascript">
+Highcharts.chart('container_add_request', {
+    chart: {
+        type: 'area'
+    },
+
+    accessibility: {
+        description: ''
+    },
+    title: {
+        text: 'Add Request Number'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        allowDecimals: false,
+        labels: {
+            formatter: function () {
+                return this.value; // clean, unformatted number for year
+            }
+        },
+        accessibility: {
+            rangeDescription: ''
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Request Number'
+        }
+    },
+    tooltip: {
+        pointFormat: '{series.name} add <b>{point.y:,.0f}</b><br/>VM in day {point.x}'
+    },
+	
+    plotOptions: {
+        area: {
+            pointStart: 1,
+            marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true
+                    }
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'User',
+        data: PLACEHOLDER_ADD_REQUEST_NUM
+    }]
+});
+		</script>
+		
+		<script type="text/javascript">
+Highcharts.chart('container_del_request', {
+    chart: {
+        type: 'area'
+    },
+
+    accessibility: {
+        description: ''
+    },
+    title: {
+        text: 'Del Request Number'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        allowDecimals: false,
+        labels: {
+            formatter: function () {
+                return this.value; // clean, unformatted number for year
+            }
+        },
+        accessibility: {
+            rangeDescription: ''
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Request Number'
+        }
+    },
+    tooltip: {
+        pointFormat: '{series.name} delete <b>{point.y:,.0f}</b><br/>VM in day {point.x}'
+    },
+	
+    plotOptions: {
+        area: {
+            pointStart: 1,
+            marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true
+                    }
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'User',
+        data: PLACEHOLDER_DEL_REQUEST_NUM
+    }]
+});
+		</script>
+		
+		<script type="text/javascript">
+Highcharts.chart('container_give_up_rate', {
+
+    title: {
+        text: 'Daily Give Up Rate'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Give Up Rate'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+			
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_GIVE_UP_RATE_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_GIVE_UP_RATE_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+		
+		<script type="text/javascript">
+Highcharts.chart('container_bid_success_rate', {
+
+    title: {
+        text: 'Daily Bid Success Rate'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Daily Bid Success Rate'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+			
+    series: [{
+        name: 'Player 0',
+        data: PLACEHOLDER_BID_SUCCESS_RATE_0
+    }, {
+        name: 'Player 1',
+        data: PLACEHOLDER_BID_SUCCESS_RATE_1
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+
+	<script type="text/javascript">
+Highcharts.chart('container_price_factor', {
+
+    title: {
+        text: 'Daily Price Factor (Mean)'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: 'Factor'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Range: 1 to 2017'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+	chart: {
+        zoomType: 'x'
+    },
+
+    series: [{
+        name: 'Fac',
+        data: PLACEHOLDER_PRICE_FACTOR
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+		</script>
+	</body>
+</html>
